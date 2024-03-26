@@ -1,0 +1,38 @@
+body{
+  font-family: Helvetica, sans-serif;
+  color: rgb(20, 20, 17);
+
+}
+.products {
+  display: flex;
+  justify-content: space-between;
+
+}
+.phones {
+  width: 320px;
+  height: auto;
+  padding: 20px;
+  border: 1px solid blueviolet;
+
+}
+h1 {
+  color: rgb(26, 13, 32);
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  
+}
+h2 {
+  color: firebrick;
+  font-size: 30px;
+}
+
+h3{
+  font-size: 25px;
+}
+h1, h2, h3 {
+  margin: 0.85em;
+}
+a:hover {
+  color: rgb(14, 31, 11);
+}
