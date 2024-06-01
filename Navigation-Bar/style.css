@@ -105,17 +105,23 @@ li{
     justify-content: center;
 }
 @media only screen and (max-width:992px) {
-    .nav-links, .navbar > .action-btn{
-        display: none;
+    .navbar{
+        padding: 0.7rem;
     }
     .toggle-btn{
-        display: block;
+        display: none;
     }
 }
 @media only screen and (max-width:576px) {
+    .nav-links, .navbar > .action-btn{
+        display: none;
+    }
     .dropDownMenu{
         left: 2rem;
         width: unset;
+    }
+    .toggle-btn{
+        display: block;
     }
 
 }
