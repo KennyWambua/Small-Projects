@@ -68,3 +68,17 @@ body{
 .actions input[type="checkbox"] {
     margin-right: 5px;
 }
+.links{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.links a {
+    text-decoration: none;
+    margin: 0 10px;
+    transition: text-decoration 0.3s;
+
+}
+.links a:hover{
+    text-decoration: underline;
+}
