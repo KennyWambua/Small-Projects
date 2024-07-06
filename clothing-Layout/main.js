@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function(){
         h4.appendChild(h4Text);
     
         let h2 = document.createElement('h2');
-        let h2Text = document.createTextNode("$" + (ob.price / 100).toFixed(2));
+        let h2Text = document.createTextNode("$" + math.round(ob.price / 100));
         h2.appendChild(h2Text);
     
         boxDiv.appendChild(boxLink);
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function(){
     
         return boxDiv;
     }
+    
     let containerClothing = document.getElementById('containerClothing');
 
     // Backend Calling
