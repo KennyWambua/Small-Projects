@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
-    let contentTitle;
+    let containerClothing = document.getElementById('containerClothing');
     
-    console.log(document.cookie);
     function dynamicClothingSection(ob){
         let boxDiv = document.createElement('div');
         boxDiv.className = 'box';
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function(){
         h4.appendChild(h4Text);
     
         let h2 = document.createElement('h2');
-        let h2Text = document.createTextNode("$" + math.round(ob.price / 100));
+        let h2Text = document.createTextNode("$" + (ob.price / 100).toFixed(2));
         h2.appendChild(h2Text);
     
         boxDiv.appendChild(boxLink);
@@ -36,16 +35,18 @@ document.addEventListener('DOMContentLoaded', function(){
     
         return boxDiv;
     }
-    
-    let containerClothing = document.getElementById('containerClothing');
-
+  
     // Backend Calling
     let httpRequest = new XMLHttpRequest();
-
+  
     httpRequest.onreadystatechange = function(){
         if(this.readyState === 4){
             if(this.status ===200){
-                contentTitle = JSON.parse(this.responseText);
+                let contentTitle = JSON.parse(this.responseText);
+                if (document.cookie.indexOf(",counter=") >= 0){
+                    var counter = document.cookie.split(",")[1].split("=")[1];
+                    document.getElementById('badge').innerHTML = counter;
+                }
                 for (let i = 0; i < contentTitle.length; i++){
                     if (!contentTitle[i].isAccessory){
                         containerClothing.appendChild(dynamicClothingSection(contentTitle[i]));
@@ -59,4 +60,4 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     httpRequest.open('GET', 'https://5d76bf96515d1a0014085cf9.mockapi.io/product', true);
     httpRequest.send();
-});
+  });
