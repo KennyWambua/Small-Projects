@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Kay | Login </title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kay | Login</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
     <main>
-        <div class="login-container">
-            <form class="login-form" action="#">
-                <h3><strong> Sign in to KayStore</strong> </h3>
-                <div class="input-group">
-                    <input type="email" placeholder="Email or Username" name="email" id="email" required>
-                </div>
-                <div class="input-group">
-                    <input type="password" placeholder="Password" name="password" id="password" required>
-                </div>
-                <button class="loginBtn" type="submit"> Sign in</button>
-                <div class="actions">
-                    <div>
-                        <input type="checkbox" name="keep-logged-in" id="keepLoggedIn">
-                        <label for="Keep-looged-in"> Keep me logged in </label>
-                    </div>
-                    <a href="#"> Forgot password</a>
-                </div>
-                <div class="links">
-                    <a href="#"> Don't have an account? create one </a>
-                </div>
-            </form>
-        </div>
+      <div class="login-container mt-8">
+        <div id="loginContainer" class="text-center mb-8"></div>
+        <form class="login-form" action="#">
+          <div class="input-group">
+            <input
+              type="email"
+              placeholder="Email or Username"
+              name="email"
+              id="email"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              id="password"
+              required
+            />
+          </div>
+          <button class="loginBtn" type="submit">Sign in</button>
+          <div class="actions">
+            <div>
+              <input type="checkbox" name="keep-logged-in" id="keepLoggedIn" />
+              <label for="Keep-looged-in"> Keep me logged in </label>
+            </div>
+            <a href="#"> Forgot password</a>
+          </div>
+          <div class="links">
+            <a href="#"> Don't have an account? create one </a>
+          </div>
+        </form>
+      </div>
     </main>
-</body>
+    <script>
+      const loginContainer = document.getElementById("loginContainer");
+      const containerHeader = document.createElement("h2");
+      const text = "Sign in to KayStore";
+      const headerContent = document.createTextNode(text);
+      containerHeader.appendChild(headerContent);
+      loginContainer.appendChild(containerHeader);
+    </script>
+  </body>
 </html>
